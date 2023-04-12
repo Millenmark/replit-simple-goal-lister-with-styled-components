@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {nanoid} from 'nanoid'
 
 import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
 import CourseInput from './components/CourseGoals/CourseGoalInput/CourseGoalInput';
@@ -13,7 +14,7 @@ const App = () => {
   const addGoalHandler = enteredText => {
     setCourseGoals(prevGoals => {
       const updatedGoals = [...prevGoals];
-      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
+      updatedGoals.unshift({ text: enteredText, id: nanoid() });
       return updatedGoals;
     });
   };
